@@ -1,0 +1,156 @@
+.card__btn {
+    background-color: white;
+    border: 1px solid #cccccc;
+    color: #696969;
+    padding: 0.5rem;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.card {
+    background-color: rgb(201, 201, 201);
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &:hover {
+        .card__image {
+            filter: contrast(100%);
+        }
+    }
+}
+
+.card__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.card__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    filter: contrast(70%);
+    overflow: hidden;
+    position: relative;
+    transition: filter 0.5s cubic-bezier(.43, .41, .22, .91);
+    width: 100%;
+}
+
+.card__title {
+    color: #696969;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.card__text {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #696969;
+}
+
+.item__modal,
+.item__modal--overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+}
+
+.item__modal--overlay {
+    background: rgba(49, 49, 49, 0.8);
+}
+
+.item__modal--content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    width: 70%;
+    left: 15%;
+    transform: translate(0%, -40%);
+    line-height: 1.4;
+    background: rgb(201, 201, 201);
+    padding: 2rem;
+    border-radius: 3px;
+    z-index: 1;
+    animation: caida 1.2s ease-in-out;
+    gap: .5rem;
+
+    @media(min-width: 1000px) {
+        flex-direction: row;
+        height: 50%;
+        width: 80%;
+        left: 10%;
+    }
+}
+
+.item__modal--descripcion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+}
+
+.item__modal--btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    width: 100%;
+}
+
+.card__btn--modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item__modal--h2 {
+    color: #696969;
+}
+
+.item__modal--img {
+    border: solid black 5px;
+    border-radius: 3px;
+
+    @media(min-width: 1000px) {
+        height: auto;
+        max-width: 50%;
+    }
+}
+
+body.active-modal {
+    @media(min-width: 1000px) {
+        overflow-y: hidden;
+        margin-right: 19px;
+    }
+}
+
+@keyframes caida {
+    from {
+        top: -70%;
+    }
+
+    to {
+        top: calc(40%);
+    }
+}
