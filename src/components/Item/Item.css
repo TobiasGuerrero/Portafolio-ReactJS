@@ -9,6 +9,12 @@
     border-radius: 0.25rem;
 }
 
+.card__btn:hover{
+    background-color: grey;
+    transition: all .5s;
+    color: rgb(201, 201, 201);
+}
+
 .card {
     background-color: rgb(201, 201, 201);
     border-radius: 0.25rem;
@@ -54,7 +60,7 @@
 
 .card__text {
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: center;
     color: #696969;
@@ -126,6 +132,7 @@
 
 .item__modal--h2 {
     color: #696969;
+    margin-top: 2rem ;
 }
 
 .item__modal--img {

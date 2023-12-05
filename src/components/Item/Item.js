@@ -17,7 +17,6 @@ const Item = ({ nombre, foto, descripcion, link }) => {
             <img onClick={toggleModal} src={foto} alt={nombre} className="card__image" />
             <div className="card__content">
                 <div className="card__title">{nombre}</div>
-                <p className="card__text">{descripcion}</p>
                 <button onClick={toggleModal} className="card__btn">Ver detalles</button>
                 <a href={link} target="_blank" rel="noopener noreferrer"><button className="card__btn">Ver pagina</button></a>
             </div>
